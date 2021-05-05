@@ -1,4 +1,5 @@
 {
+  "homepage": "https://giladgreen.github.io/1dashboard",
   "name": "1dashboard",
   "version": "0.1.0",
   "private": true,
@@ -17,6 +18,7 @@
     "test": "react-scripts test",
     "watch": "cd src && sass --watch scss:style",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
