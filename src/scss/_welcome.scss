@@ -1,0 +1,44 @@
+#welcome-page {
+    background: black;
+    color: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 2vh;
+}
+#welcome-header{
+
+    font-weight: bold;
+    position: relative;
+    top:2vh;
+    width: 100%;
+    text-align: center;
+}
+.uppercase{
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+.app-name{
+
+    font-size: 6em;
+}
+#pie-image{
+    position: relative;
+    top:4vh;
+    width: 20vw;
+    left: 40vw;
+
+
+    @media only screen and (max-width: $mobile-horizonal) {
+        width: 60vw;
+        left: 20vw;
+    }
+
+    @media only screen and (max-width: $mobile-vertical) {
+        width: 60vw;
+        left: 20vw;
+    }
+
+
+}
