@@ -14,31 +14,73 @@
     width: 100%;
     text-align: center;
 }
-.uppercase{
-    font-size: 4em;
-    text-transform: uppercase;
-}
+
 
 .app-name{
 
-    font-size: 6em;
+    font-size: 10vh;
+    @media only screen and (max-width: $mobile-horizonal) {
+        font-size: 9vh;
+    }
+
+    @media only screen and (max-width: $mobile-vertical) {
+        font-size: 6vh;
+    }
 }
-#pie-image{
-    position: relative;
-    top:4vh;
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes rotation-backward {
+    from {
+        transform: rotate(359deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+.pie-image{
+    position: fixed;
+    top:25vh;
     width: 20vw;
     left: 40vw;
 
 
     @media only screen and (max-width: $mobile-horizonal) {
-        width: 60vw;
-        left: 20vw;
+        top:21vh;
+        width: 40vw;
+        left: 30vw;
     }
 
     @media only screen and (max-width: $mobile-vertical) {
+        top:26vh;
         width: 60vw;
         left: 20vw;
     }
 
 
+}
+
+
+#pie-image-1{
+    animation: rotation 5s infinite linear;
+}
+
+#pie-image-2{
+    animation: rotation-backward 4s infinite linear;
+}
+
+#pie-image-3{
+    animation: rotation 7s infinite linear;
+}
+
+#pie-image-4{
+    animation: rotation 5s infinite linear;
 }
