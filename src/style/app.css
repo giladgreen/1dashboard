@@ -10743,35 +10743,27 @@ h3 {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-#welcome-page {
-  background: black;
-  color: white;
+#app {
+  background: white;
+  color: black;
   position: fixed;
+  top: 0vh;
+  left: 0vw;
   width: 100vw;
-  height: 100vh;
-  padding: 2vh;
+  height: 1000vh;
 }
 
-#welcome-header {
-  font-weight: bold;
-  position: relative;
-  top: 2vh;
+#connected-state {
+  color: #00000000;
+  font-size: 1.6vh;
+  position: fixed;
+  top: 0.2vh;
+  left: 0.5vw;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
-
-.app-name {
-  font-size: 10vh;
-}
-@media only screen and (max-width: 800px) {
-  .app-name {
-    font-size: 9vh;
-  }
-}
-@media only screen and (max-width: 530px) {
-  .app-name {
-    font-size: 6vh;
-  }
+#connected-state:hover {
+  color: darkgreen;
 }
 
 @keyframes rotation {
@@ -10825,6 +10817,92 @@ h3 {
 
 #pie-image-4 {
   animation: rotation 5s infinite linear;
+}
+
+#dashboards {
+  position: relative;
+  top: 2vh;
+  left: 0vw;
+  width: 100vw;
+  height: 1000vh;
+}
+
+#dashboards-header {
+  position: relative;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 3vh;
+  text-align: left;
+  padding-left: 4vw;
+  font-size: 4vh;
+}
+
+#dashboards-main-section {
+  position: relative;
+  top: 3vh;
+  left: 2vw;
+  width: 96vw;
+  height: 88vh;
+  background: #FDFDFD;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.widget {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.widget-header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.widget-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+
+.widget-element {
+  position: absolute;
+  border: 1px solid #aaaaaa22;
+}
+
+.hidden-text {
+  color: #00000000;
+}
+.hidden-text:hover {
+  color: black;
+}
+
+.content-type-number {
+  z-index: 999999;
+  font-size: 11em;
+  opacity: 90%;
+  -webkit-text-stroke: 2px black;
+  /* width and color */
+}
+.content-type-number:hover {
+  font-size: 17em;
+  opacity: 96%;
+  -webkit-text-stroke: 4px black;
+  /* width and color */
+}
+
+.all-content-type {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3vh;
 }
 
 /*# sourceMappingURL=app.css.map */

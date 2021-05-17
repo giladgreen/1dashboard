@@ -1,0 +1,70 @@
+[
+  {
+    "widget_id": "wgt_111111",
+    "updated": "2021-05-12T17:31:00Z",
+    "elements": [
+      {
+        "element_id": "elm_111111",
+        "x-title": "Date",
+        "y-title": "Points",
+        "line-graph": {
+          "1990": 10,
+          "1995": 20,
+          "1999": 30,
+          "2005": 40,
+          "2006": 60,
+          "2010": 90,
+          "2020": 160,
+          "2030": 60
+        }
+      },
+      {
+        "element_id": "elm_222222",
+        "number": "+25%",
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "widget_id": "wgt_222222",
+    "updated": "2021-05-12T17:31:00Z",
+    "elements": [
+      {
+        "element_id": "elm_333333",
+        "pie-chart":  [
+          ["Task", "Hours per Day"],
+          ["Work", 11],
+          ["Eat", 2],
+          ["Commute", 2],
+          ["Watch TV", 2],
+          ["Sleep", 7]
+        ]
+      }
+    ]
+  },
+  {
+    "widget_id": "wgt_333333",
+    "updated": "2021-05-12T17:31:00Z",
+    "elements": [
+      {
+        "element_id": "elm_444444",
+        "x-title": "Date",
+        "y-title": "Points",
+        "bar-graph": [
+          ["City", "2010 Population", "2000 Population"],
+          ["New York City, NY", 8175000, 8008000],
+          ["Los Angeles, CA", 3792000, 3694000],
+          ["Chicago, IL", 2695000, 2896000],
+          ["Houston, TX", 2099000, 1953000],
+          ["Philadelphia, PA", 1526000, 1517000]
+        ]
+      },
+      {
+        "element_id": "elm_555555",
+        "number": "-55K",
+        "color": "red"
+      }
+    ]
+  }
+]
+

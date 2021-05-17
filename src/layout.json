@@ -1,0 +1,98 @@
+{
+  "dashboard_id": "dsh_111111",
+  "widgets": [
+    {
+      "widget_id": "wgt_111111",
+      "order": 1,
+      "width": 50,
+      "height": 100,
+      "service_category": "Customer Support",
+      "service_name": "Zendesk",
+      "service_id": "srv_111111",
+      "title" : "Ticket Queue (max/day)",
+      "layout": {
+        "layout_id": "lyt_111111",
+        "elements": [
+          {
+            "element_id": "elm_111111",
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 100,
+            "type": "line-graph"
+          },
+          {
+            "element_id": "elm_222222",
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 100,
+            "type": "number",
+            "style": {
+
+            }
+          }
+        ]
+      }
+    },
+    {
+      "widget_id": "wgt_222222",
+      "order": 2,
+      "width": 50,
+      "height": 100,
+      "service_category": "Customer Support",
+      "service_name": "Zendesk",
+      "service_id": "srv_111111",
+      "title" : "DDQs (max/day)",
+      "layout": {
+        "layout_id": "lyt_222222",
+        "elements": [
+          {
+            "element_id": "elm_333333",
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 100,
+            "type": "pie-chart"
+          }
+        ]
+      }
+    }
+,
+    {
+      "widget_id": "wgt_333333",
+      "order": 3,
+      "width": 100,
+      "height": 100,
+      "service_category": "Customer Support",
+      "service_name": "Zendesk",
+      "service_id": "srv_111111",
+      "title" : "bla bla (max/day)",
+      "layout": {
+        "layout_id": "lyt_333333",
+        "elements": [
+          {
+            "element_id": "elm_444444",
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 100,
+            "type": "bar-graph"
+          },
+          {
+            "element_id": "elm_555555",
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 100,
+            "type": "number",
+            "style": {
+            }
+          }
+        ]
+      }
+    }
+
+
+  ]
+}

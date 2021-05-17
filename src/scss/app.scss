@@ -15,4 +15,32 @@ $mobile-vertical: 530px;
   }
 }
 
-@import './welcome';
+
+#app{
+  background: white;
+  color: black;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 1000vh;
+}
+
+
+#connected-state{
+  color: #00000000;
+  &:hover {
+    color:darkgreen;
+  }
+  font-size: 1.6vh;
+
+  position: fixed;
+  top: 0.2vh;
+  left: 0.5vw;
+  width: 100%;
+  text-align: left;
+
+
+}
+@import './loader';
+@import './dashboards';
