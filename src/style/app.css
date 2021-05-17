@@ -10910,11 +10910,6 @@ h3 {
 
 .content-type-text {
   z-index: 999999;
-  opacity: 88%;
-  transition: 2.3s;
-}
-.content-type-text:hover {
-  opacity: 96%;
 }
 
 .resize-on-hover {

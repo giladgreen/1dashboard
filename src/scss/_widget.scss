@@ -32,11 +32,6 @@
 
 .content-type-text{
     z-index: 999999;
-    opacity: 88%;
-    transition: 2.3s;
-    &:hover {
-        opacity: 96%;
-    }
 }
 .resize-on-hover{
     -webkit-text-stroke: 2px black; /* width and color */
