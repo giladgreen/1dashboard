@@ -5,42 +5,42 @@ import layout from "./layout";
 import data from "./data";
 
 function calcWidgetsData(widgets){
-    console.log('calcWidgetsData')
+    widgets.sort((a,b)=> a.order < b.order ? -1 : 1);
+    widgets.forEach((w,index)=> w.order = index+1);
     const widgetsData = [];
     widgets.forEach((widget, index) => {
-        const { width, height, layout: {elements}, widget_id } = widget;
+        const { width, height, widget_id } = widget;
         const widgetData = data.find(d => d.widget_id === widget_id);
-        elements.forEach(element =>{
-            element.data = widgetData.elements.find(e => e.element_id === element.element_id)
+        widget.layout.elements.forEach(element =>{
+            element.data = widgetData ? widgetData.elements.find(e => e.element_id === element.element_id) : null;
         })
-        const newLine = index === 0 || width +  widgetsData[index -1].totalWidth > 100;
-        let row = index === 0  ? 0 : (newLine ?  widgetsData[index -1].row+1 : widgetsData[index -1].row);
-        const totalWidth = newLine ? width :  width + widgetsData[index -1].totalWidth;
+        widget.elements = widget.layout.elements.filter(element => Boolean(element.data));
+        const firstInLine = index === 0 || width + widgetsData[index -1].totalWidth > 100;
+        const row = index === 0  ? 0 : (firstInLine ?  widgetsData[index -1].row+1 : widgetsData[index -1].row);
+        const totalWidth = firstInLine ? width : width + widgetsData[index-1].totalWidth;
+        widget.row = row;
+        widget.firstInLine = firstInLine;
         widgetsData.push(
             {
                 row,
                 width,
                 height,
-                newLine,
+                firstInLine,
                 totalWidth,
             }
         );
     });
-    widgetsData.forEach((widget) => {
-        const sameRowsHeight = widgetsData.filter(w=>w.row === widget.row).map(w=>w.height);
-        widget.newHeight = Math.max(...sameRowsHeight);
+    widgets.forEach((widget) => {
+        widget.height = Math.max(...widgetsData.filter(w=>w.row === widget.row).map(w=>w.height));
     });
-    widgetsData.forEach((widget) => {
-        const sameRowsHeight = widgetsData.filter(w=>w.row === widget.row).map(w=>w.height);
-        widget.newHeight = Math.max(...sameRowsHeight);
-    });
-    const totalHeight =  widgetsData.filter(w=>w.newLine).map(w=>w.newHeight).reduce((a, b) => a + b, 0);
+
+    const totalHeight = widgets.filter(w=>w.firstInLine).map(w=>w.height).reduce((a, b) => a + b, 0);
     if (totalHeight > 100){
         const ratio = 100 / totalHeight;
-        widgetsData.forEach(w => w.newHeight = w.newHeight * ratio);
+        widgets.forEach(w => w.height = w.height * ratio);
     }
 
-    return widgetsData
+    return widgets.filter(w => w.elements.length);
 }
 
 export default class App extends React.Component {
@@ -50,26 +50,24 @@ export default class App extends React.Component {
     tryToConnect(){
         console.log('tryToConnect')
         setTimeout(()=>{
+            const widgets = calcWidgetsData(layout.widgets);
 
-            const widgets = layout.widgets.sort((a,b)=> a.order < b.order ? -1 : 1);
-            console.log('setTimeout cb', widgets)
             this.setState({
                 connected: true,
                 widgets,
-                widgetsData: calcWidgetsData(widgets)
             })
-        },4000)
+        },900)
     }
     render() {
         console.log('render')
-        const { connected, widgets, widgetsData } = this.state;
+        const { connected, widgets } = this.state;
 
         if (!connected){
             //make call to get data
-            this.tryToConnect();
+            this.tryToConnect();  // TODO
         }
 
-        const welcomeScreen = <div id="welcome-page">
+        const loader = <div id="welcome-page">
                 <img id="pie-image-full"  className="pie-image" src="https://giladgreen.github.io/1dashboard/pie-full.png" />
                 <img id="pie-image-1"  className="pie-image" src="https://giladgreen.github.io/1dashboard/pie_1.png" />
                 <img id="pie-image-2"  className="pie-image" src="https://giladgreen.github.io/1dashboard/pie_2.png" />
@@ -77,13 +75,13 @@ export default class App extends React.Component {
                 <img id="pie-image-4"  className="pie-image" src="https://giladgreen.github.io/1dashboard/pie_4.png" />
             </div>;
 
-      const dashoboardsScreen = connected ? <Dashboards widgets={widgets} widgetsData={widgetsData} data={data}/> : <div></div>;
+      const dashboardScreen = connected ? <Dashboards widgets={widgets} /> : <div></div>;
         return (
-            <div id="app">
+            <div id="app" className="noselect">
                 <div id="connected-state">
                     {connected ? 'Connected' : 'Connecting..'}
                 </div>
-                { !connected ? welcomeScreen : dashoboardsScreen }
+                { !connected ? loader : dashboardScreen }
 
             </div>
         );

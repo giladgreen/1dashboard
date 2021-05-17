@@ -5,22 +5,19 @@
     "elements": [
       {
         "element_id": "elm_111111",
-        "x-title": "Date",
-        "y-title": "Points",
-        "line-graph": {
-          "1990": 10,
-          "1995": 20,
-          "1999": 30,
-          "2005": 40,
-          "2006": 60,
-          "2010": 90,
-          "2020": 160,
-          "2030": 60
-        }
+        "LineChart": [
+          ["Date","Points"],
+          [1970, 30],
+          [1980, 35],
+          [1990, 37],
+          [2000, 36],
+          [2010, 40],
+          [2020, 45]
+        ]
       },
       {
         "element_id": "elm_222222",
-        "number": "+25%",
+        "number": "+50%",
         "color": "green"
       }
     ]
@@ -31,7 +28,7 @@
     "elements": [
       {
         "element_id": "elm_333333",
-        "pie-chart":  [
+        "PieChart":  [
           ["Task", "Hours per Day"],
           ["Work", 11],
           ["Eat", 2],
@@ -50,19 +47,41 @@
         "element_id": "elm_444444",
         "x-title": "Date",
         "y-title": "Points",
-        "bar-graph": [
-          ["City", "2010 Population", "2000 Population"],
-          ["New York City, NY", 8175000, 8008000],
-          ["Los Angeles, CA", 3792000, 3694000],
-          ["Chicago, IL", 2695000, 2896000],
-          ["Houston, TX", 2099000, 1953000],
-          ["Philadelphia, PA", 1526000, 1517000]
+        "BarChart": [
+          ["City", "2010", "2020"],
+          ["NY, LA", 8175000, 8008000],
+          ["NY, LA", 3792000, 3694000],
+          ["NY, LA", 2695000, 2896000],
+          ["NY, LA", 2099000, 1953000],
+          ["NY, LA", 1526000, 1517000]
         ]
       },
       {
         "element_id": "elm_555555",
-        "number": "-55K",
+        "number": "-3K",
         "color": "red"
+      }
+    ]
+  } ,
+  {
+    "widget_id": "wgt_444444",
+    "updated": "2021-05-12T17:31:00Z",
+    "elements": [
+      {
+        "element_id": "elm_666666",
+        "number": "GOOD \uD83D\uDC4D",
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "widget_id": "wgt_555555",
+    "updated": "2021-05-12T17:31:00Z",
+    "elements": [
+      {
+        "element_id": "elm_777777",
+        "number": "#4GHF",
+        "color": "black"
       }
     ]
   }

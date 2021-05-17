@@ -30,55 +30,19 @@
 
 }
 
-.widget{
-
-
-
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-.widget-header{
-    text-align: center;
-    font-weight: bold;
-}
-.widget-content{
-
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-    width: 100%;
-}
-.widget-element{
-    position: absolute;
-    border: 1px solid #aaaaaa22;
-}
 .hidden-text{
     color: #00000000;
+    transition: 1.3s;
     &:hover {
         color:black;
     }
 }
-.content-type-number {
-    z-index: 999999;
-    font-size: 11em;
-    opacity: 90%;
-    -webkit-text-stroke: 2px black; /* width and color */
-    &:hover {
-        font-size: 17em;
-        opacity: 96%;
-        -webkit-text-stroke: 4px black; /* width and color */
-    }
-}
-
-.all-content-type {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -3vh;
-
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
